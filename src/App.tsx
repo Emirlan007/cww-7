@@ -69,7 +69,6 @@ const App = () => {
 
   const selectedIngredients = ingredients.filter(ing => ing.count > 0);
 
-
   return (
     <>
       <div className="main-container">
@@ -94,13 +93,13 @@ const App = () => {
           <h3>Order Details</h3>
 
           {selectedIngredients.length === 0 ? (
-              <p className="empty-cart">Order is empty <br/> Please add some items</p>
+              <p className="empty-cart">Order is empty! <br/> Please add some items!</p>
           ) :
               selectedIngredients.map(ingred => (
                   <div key={ingred.name} className="items-list">
                     <p className="item-name">{ingred.name}</p>
                     <p className="item-count">x {ingred.count}</p>
-                    <p className="itemPrice">{ingred.price} KGS</p>
+                    <p className="itemPrice">{ingred.price * ingred.count} KGS</p>
                     <button className="remove-btn" onClick={() => deleteIngredient(ingred.name)}>Remove</button>
                   </div>
               ))
