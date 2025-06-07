@@ -1,0 +1,151 @@
+#root {
+  width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.main-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.add-items {
+  border: 1px solid green;
+  border-radius: 15px;
+  padding: 20px;
+  width: 45%;
+}
+
+.add-items h3 {
+  margin: 0;
+}
+
+.order-details {
+  border: 1px solid green;
+  border-radius: 15px;
+  padding: 20px;
+  width: 45%;
+}
+
+.order-details h3 {
+  margin: 0;
+}
+
+.menu-button {
+  display: flex;
+  align-items: center;
+  border: 1px solid green;
+  border-radius: 15px;
+  background-color: transparent;
+  cursor: pointer;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.itemNamePrice {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin-left: 30px;
+}
+
+.item-price {
+  font-size: 18px;
+}
+
+.item-name {
+  font-size: 18px;
+  width: 120px;
+  text-align: start;
+}
+
+.item-count {
+  width: 50px;
+}
+
+.itemPrice {
+  width: 100px;
+}
+
+.item-image {
+  height:6em;
+  width: 6em;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.empty-cart {
+  font-size: 20px;
+  color: #cf0808;
+}
+
+.items-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.items-list p {
+  font-size: 18px;
+}
+
+.remove-btn {
+  background-color: #c52d2e;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.remove-btn:hover {
+  background-color: #aa1f20;
+}
+
+.remove-btn:active {
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+.total-price {
+  margin: 60px 0 0 0;
+}

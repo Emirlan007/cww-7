@@ -1,10 +1,12 @@
 import './App.css';
-import type {Ingredient, SelectedIngredient} from "./types";
+import type {Ingredient, SelectedIngredient} from "../types";
 import {useState} from "react";
-import burgerImage from "./assets/Burger.jpg";
-import glassImage from "./assets/Glass.webp";
-import friesImage from "./assets/Fries.webp";
-import colaImage from "./assets/Cola.jpeg";
+import burgerImage from "../assets/Burger.jpg";
+import glassImage from "../assets/Glass.webp";
+import friesImage from "../assets/Fries.webp";
+import colaImage from "../assets/Cola.jpeg";
+import IngredientButton from "../components/IngredientButton/IngredientButton.tsx";
+import OrderDetails from "../components/OrderDetails  /OrderDetails.tsx";
 
 const App = () => {
 
@@ -67,48 +69,22 @@ const App = () => {
     },0);
   }
 
-  const selectedIngredients = ingredients.filter(ing => ing.count > 0);
-
   return (
     <>
       <div className="main-container">
+
         <div className="add-items">
           <h3>Add Items</h3>
-              {INGREDIENTS.map(INGRED => (
-                  <button
-                      key={INGRED.name}
-                      className="menu-button"
-                      onClick={() => addIngredient(INGRED.name)}
-                  >
-                    <img src={INGRED.image} alt={INGRED.name} className="item-image"/>
-                    <div className="itemNamePrice">
-                      <p className="item-price">{INGRED.name}</p>
-                      <p className="item-price">{INGRED.price} KGS</p>
-                    </div>
-                  </button>
-              ))}
+          <IngredientButton ingredients={INGREDIENTS} onAdd={addIngredient}/>
         </div>
-
-        <div className="order-details">
-          <h3>Order Details</h3>
-
-          {selectedIngredients.length === 0 ? (
-              <p className="empty-cart">Order is empty! <br/> Please add some items!</p>
-          ) :
-              selectedIngredients.map(ingred => (
-                  <div key={ingred.name} className="items-list">
-                    <p className="item-name">{ingred.name}</p>
-                    <p className="item-count">x {ingred.count}</p>
-                    <p className="itemPrice">{ingred.price * ingred.count} KGS</p>
-                    <button className="remove-btn" onClick={() => deleteIngredient(ingred.name)}>Remove</button>
-                  </div>
-              ))
-          }
-          {total > 0 ? <p className="total-price"><b>Total price:</b> {total}</p> : null}
-        </div>
+        <OrderDetails
+            ingredients={ingredients}
+            deleteIngredient={deleteIngredient}
+            total={total}
+        />
       </div>
     </>
-  )
-}
+  );
+};
 
 export default App;
