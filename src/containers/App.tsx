@@ -17,16 +17,16 @@ const INGREDIENTS: Ingredient[] = [
   {name: 'Cola', price: 80, image: colaImage},
 ];
 
-const [ingredients, setIngredients] = useState<SelectedIngredient[]>([
-  {name: 'Hamburger', price: 160, count: 0},
-  {name: 'Cheeseburger', price: 180, count: 0},
-  {name: 'Fries', price: 120, count: 0},
-  {name: 'Coffee', price: 100, count: 0},
-  {name: 'Tea', price: 60, count: 0},
-  {name: 'Cola', price: 80, count: 0},
-]);
-
 const App = () => {
+
+  const [ingredients, setIngredients] = useState<SelectedIngredient[]>([
+    {name: 'Hamburger', price: 160, count: 0},
+    {name: 'Cheeseburger', price: 180, count: 0},
+    {name: 'Fries', price: 120, count: 0},
+    {name: 'Coffee', price: 100, count: 0},
+    {name: 'Tea', price: 60, count: 0},
+    {name: 'Cola', price: 80, count: 0},
+  ]);
 
   const addIngredient = (nameIngred: string) => {
     setIngredients((prevState) => {
